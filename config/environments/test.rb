@@ -34,4 +34,7 @@ Excerpts::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+  config.after_initialize do
+    require File.join(Rails.root, 'lib/core_ext/string.rb')
+  end
 end

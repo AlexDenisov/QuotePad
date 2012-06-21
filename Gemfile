@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
 gem 'jquery-rails'
+gem 'devise'
 
 group :production do 
 
@@ -15,6 +16,7 @@ group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'guard-cucumber'
+  gem 'capybara'
 end
 
 group :development, :test do 
