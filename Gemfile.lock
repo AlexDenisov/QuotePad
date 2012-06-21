@@ -182,7 +182,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   cucumber-rails
   database_cleaner
-  factory_girl_rails
+  factory_girl_rails (~> 3.0)
   guard-cucumber
   guard-rspec
   guard-spork
