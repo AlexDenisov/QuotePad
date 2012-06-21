@@ -1,11 +1,11 @@
 class String
   def capybara_path
-    "#{uri_string}_path"
+    "#{capybara_name}_path"
   end
   def capybara_url
-    "#{uri_string}_url"
+    "#{capybara_name}_url"
   end
-  def uri_string
+  def capybara_name
     self.gsub(' ', '_').downcase
   end
 end

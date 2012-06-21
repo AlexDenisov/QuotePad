@@ -3,12 +3,16 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.6'
 gem 'jquery-rails'
 gem 'devise'
+gem 'slim'
 
 group :production do 
 
 end
 
 group :development do
+  gem "slim-rails"
+  gem 'ruby_parser'
+  gem 'hpricot'
 end
 
 group :test do 
