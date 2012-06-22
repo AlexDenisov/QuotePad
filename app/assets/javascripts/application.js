@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require kickstart
+//= require jquery.snippet.min
 //= require_tree .

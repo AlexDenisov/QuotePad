@@ -1,4 +1,27 @@
 ---
+slim:controller:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --skip-namespace
+- --old-style-hash
+slim:mailer:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --skip-namespace
+- --old-style-hash
+slim:scaffold:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --skip-namespace
+- --old-style-hash
+- --force-plural
+- --form-builder=
 sass:assets:
 - --force
 - --pretend
@@ -115,6 +138,11 @@ jquery:install:
 - --pretend
 - --quiet
 - --skip
+htmlkickstart:install:
+- --force
+- --pretend
+- --quiet
+- --skip
 factory_girl:model:
 - --force
 - --pretend
@@ -123,6 +151,43 @@ factory_girl:model:
 - --skip-namespace
 - --old-style-hash
 - --dir=
+active_record:devise:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --skip-namespace
+- --old-style-hash
+devise:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --skip-namespace
+- --old-style-hash
+- --force-plural
+- --orm
+- --routes
+devise:install:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --orm=
+devise:views:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --form-builder=
+- --markerb
+mongoid:devise:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --skip-namespace
+- --old-style-hash
 cucumber:install:
 - --force
 - --pretend
