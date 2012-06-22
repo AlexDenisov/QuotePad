@@ -53,6 +53,12 @@ module Excerpts
     # parameters by using an attr_accessible or attr_protected declaration.
     config.active_record.whitelist_attributes = true
 
+    config.to_prepare do
+      Devise::SessionsController.layout "sign"
+      Devise::RegistrationsController.layout "sign"
+    end
+    
+
     # Enable the asset pipeline
     config.assets.enabled = true
 

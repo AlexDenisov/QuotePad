@@ -4,14 +4,14 @@ gem 'rails', '3.2.6'
 gem 'jquery-rails'
 gem 'devise'
 gem 'slim'
+gem 'twitter-bootstrap-rails'
 
 group :production do 
 
 end
 
 group :development do
-  gem 'htmlkickstart'
-  gem "slim-rails"
+  gem 'slim-rails'
   gem 'ruby_parser'
   gem 'hpricot'
 end

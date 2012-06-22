@@ -1,4 +1,19 @@
 ---
+bootstrap:install:
+- --force
+- --pretend
+- --quiet
+- --skip
+bootstrap:layout:
+- --force
+- --pretend
+- --quiet
+- --skip
+bootstrap:themed:
+- --force
+- --pretend
+- --quiet
+- --skip
 slim:controller:
 - --force
 - --pretend
@@ -133,12 +148,62 @@ rspec:view:
 - --skip-namespace
 - --old-style-hash
 - --template-engine=
-jquery:install:
+less:assets:
 - --force
 - --pretend
 - --quiet
 - --skip
-htmlkickstart:install:
+- --skip-namespace
+- --old-style-hash
+model:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --skip-namespace
+- --old-style-hash
+- --orm
+resource:
+- --template-engine=
+- --test-framework
+- --helper
+- --assets
+- --force
+- --pretend
+- --quiet
+- --skip
+- --skip-namespace
+- --old-style-hash
+- --orm
+- --force-plural
+- --resource-controller=
+- --actions=
+- --resource-route
+scaffold:
+- --template-engine=
+- --test-framework
+- --helper
+- --force
+- --pretend
+- --quiet
+- --skip
+- --skip-namespace
+- --old-style-hash
+- --orm
+- --force-plural
+- --resource-route
+- --stylesheets
+- --stylesheet-engine=
+- --scaffold-controller=
+- --assets
+less:scaffold:
+- --force
+- --pretend
+- --quiet
+- --skip
+- --skip-namespace
+- --old-style-hash
+jquery:install:
 - --force
 - --pretend
 - --quiet
@@ -263,14 +328,6 @@ migration:
 - --skip-namespace
 - --old-style-hash
 - --orm
-model:
-- --force
-- --pretend
-- --quiet
-- --skip
-- --skip-namespace
-- --old-style-hash
-- --orm
 observer:
 - --force
 - --pretend
@@ -312,22 +369,6 @@ plugin_new:
 - --full
 - --mountable
 - --skip-gemspec
-resource:
-- --template-engine=
-- --test-framework
-- --helper
-- --assets
-- --force
-- --pretend
-- --quiet
-- --skip
-- --skip-namespace
-- --old-style-hash
-- --orm
-- --force-plural
-- --resource-controller=
-- --actions=
-- --resource-route
 resource_route:
 - --force
 - --pretend
@@ -335,23 +376,6 @@ resource_route:
 - --skip
 - --skip-namespace
 - --old-style-hash
-scaffold:
-- --template-engine=
-- --test-framework
-- --helper
-- --force
-- --pretend
-- --quiet
-- --skip
-- --skip-namespace
-- --old-style-hash
-- --orm
-- --force-plural
-- --resource-route
-- --stylesheets
-- --stylesheet-engine=
-- --scaffold-controller=
-- --assets
 scaffold_controller:
 - --force
 - --pretend
