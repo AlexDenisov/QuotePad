@@ -13,9 +13,6 @@
  *= require kickstart-buttons
  *= require kickstart-grid
  *= require kickstart-menus
- *= require zellner
  *= require jquery.fancybox-1.3.4
- *= require extra
- *= require rails-kickstart
  *= require_tree .
  */
