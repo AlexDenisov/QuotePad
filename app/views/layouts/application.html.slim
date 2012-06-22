@@ -3,11 +3,9 @@ html
   head
     title Excerpts
     meta name="keywords" content="template language"
-    = javascript_include_tag \
-      "jquery", \
-      "application"
-    = stylesheet_link_tag "application"
-
+    = javascript_include_tag 'application'
+    = stylesheet_link_tag 'application'
+    = csrf_meta_tag
   body
     #content
     #wrap.clearfix
