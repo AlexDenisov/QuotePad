@@ -16,16 +16,14 @@ html lang="en"
     link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"
 
   body
-    .container
+    .container-fluid
       .row-fluid
         .span4
           | &nbsp;
         .span4
-          .well.sidebar-nav
+          .well
             = yield
         .span4
-    footer.footer
-      p.pull-left alex.d
 
     /!
       Javascripts
