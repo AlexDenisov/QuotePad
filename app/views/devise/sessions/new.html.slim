@@ -1,9 +1,9 @@
 = form_for(resource, :url => session_path(resource_name)) do |f|
-  - flash.each do |type, message|
-    .alert.alert-block #{message}
   div
     h2 Excerpts
     br/
+  - flash.each do |type, message|
+    .alert.alert-block #{message}
   div
     h3 Email
     = f.email_field :email

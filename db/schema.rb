@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120621122429) do
+ActiveRecord::Schema.define(:version => 20120624192717) do
+
+  create_table "excerpts", :force => true do |t|
+    t.string   "content"
+    t.integer  "rating",     :default => 0
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "user_id"
+  end
+
+  add_index "excerpts", ["content"], :name => "index_excerpts_on_content", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

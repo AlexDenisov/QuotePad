@@ -1,0 +1,8 @@
+= form_for @excerpt do |f|
+  - if @excerpt.errors.any?
+    .alert.alert-block 
+      - @excerpt.errors.full_messages.each do | msg |
+        #{msg}
+  .controls= f.text_area :content, :size => "10x10", :class => "input-xlarge span6"
+  br/
+  = button_tag t(:create_excerpt), :class => "btn btn-primary"
