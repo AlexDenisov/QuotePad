@@ -1,0 +1,18 @@
+div
+  = gravatar_image_tag(@user.email)
+  br/
+  br/
+  div 
+    = "#{t(:email)}: #{@user.email}"
+    br/
+    = "#{t(:member_sinth)}: #{@user.created_at.to_s :long}"
+
+br/
+- if can? :manage, User
+  = button_to t(:edit_user), edit_user_path(@user), :class => "btn btn-primary", :method => :get
+  
+- @excerpts.each do |excerpt|
+  = render :partial => 'excerpts/excerpt', :locals => {:excerpt => excerpt}
+
+= paginate @excerpts
+

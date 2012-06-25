@@ -1,0 +1,21 @@
+= form_for(@user) do |f|
+  = render :partial => 'shared/errors', :locals => {:record => @user}
+  - if current_user.is_admin?
+    div
+      h3 #{t(:email)}
+      = f.email_field :email
+      br/
+    div
+      h3 #{t(:role)}
+      = f.select(:role_id, @roles.collect { | role | [role.name, role.id] }, :include_blank => @allow_blank_role)
+      br/
+  div
+    h3 #{t(:nickname)}
+    = f.text_field :nickname
+  div
+    h3 #{t(:password)}
+    = f.password_field :password
+  div
+    = button_tag t(:save), :class => "btn btn-primary"
+  
+

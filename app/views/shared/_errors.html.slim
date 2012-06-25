@@ -1,0 +1,5 @@
+- if record.errors.any?
+  .errors.alert.alert-block
+    - record.errors.full_messages.each do | msg |
+      #{msg}
+

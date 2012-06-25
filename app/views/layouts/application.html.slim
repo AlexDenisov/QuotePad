@@ -30,6 +30,8 @@ html lang="en"
               li= link_to t(:best), "#"
             ul.nav.pull-right
               li= link_to t(:new_excerpt), new_excerpt_path
+              li= link_to t(:users), users_path if can? :manage, User
+
 
     .container
       .content

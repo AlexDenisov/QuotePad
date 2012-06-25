@@ -46,3 +46,9 @@ Feature: Authentication Scenario
     And I click on "Sign in"
     Then I should be redirected to Root page
 
+  Scenario: Sign Out successful
+    Given Authorized User
+    When I visit the Root page
+    And I click on "Sign Out"
+    Then I should be on the Sign In page
+

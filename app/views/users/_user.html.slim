@@ -1,0 +1,7 @@
+.user
+  = gravatar_image_tag user.email
+  | &nbsp;&nbsp;
+  = link_to user.email, user_path(user)
+  br/
+  br/
+

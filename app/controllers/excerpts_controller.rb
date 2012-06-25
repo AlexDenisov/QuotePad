@@ -1,9 +1,10 @@
 class ExcerptsController < ApplicationController
   before_filter :authenticate_user!
+  load_and_authorize_resource
   
   def index
     @legend_title = t :excerpts
-    @excerpts = Excerpt.order("created_at DESC")
+    @excerpts = Excerpt.order("created_at DESC").page(params[:page])
   end
   
   def new

@@ -6,6 +6,8 @@ gem 'devise'
 gem 'slim'
 gem 'twitter-bootstrap-rails'
 gem 'gravatar_image_tag'
+gem 'cancan'
+gem 'kaminari'
 
 group :production do 
 

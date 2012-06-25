@@ -8,7 +8,7 @@ Excerpts::Application.routes.draw do
     delete 'sign_out' => 'devise/sessions#destroy'
   end
 
-  resources :excerpts
+  resources :excerpts, :users
 
   root :to => "excerpts#index"
 

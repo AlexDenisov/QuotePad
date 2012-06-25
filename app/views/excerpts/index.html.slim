@@ -1,3 +1,4 @@
 - @excerpts.each do | excerpt |
   = render :partial => 'excerpt', :locals => { :excerpt => excerpt }
   br/
+= paginate @excerpts

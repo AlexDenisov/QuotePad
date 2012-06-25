@@ -11,3 +11,20 @@ end
 And /^I click on "(.+?)"$/ do | clickable_element |
   click_on clickable_element
 end
+
+Then /^I should not have "(.+?)" on the page$/ do | css |
+  page.should_not have_selector(css)
+end
+
+Then /^I should have "(.+?)" on the page$/ do | css |
+  page.should have_selector(css)
+end
+
+Then /^I should see "(.+?)"$/ do | html |
+  page.should have_content(html)
+end
+
+When /^I select (.+?) (.+?)$/ do | option, from |
+  select(option, :from => from.capybara_name)
+end
+
