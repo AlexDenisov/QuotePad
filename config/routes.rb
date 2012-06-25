@@ -1,4 +1,4 @@
-Excerpts::Application.routes.draw do
+QuotePad::Application.routes.draw do
 
   devise_for :users, 
              :path => ""

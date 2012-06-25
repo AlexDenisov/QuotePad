@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   before_filter :project_metadata
 
   def project_metadata
-    @project_name = "Excerpts"
+    @project_name = "QuotePad"
   end
 end
