@@ -1,11 +1,11 @@
 = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
   div
-    h2 Excerpts
+    h2 #{@project_name}
     br/
   - flash.each do |type, message|
     .alert.alert-block #{message}
   div
-    h3 Email
+    h3 #{t(:email)}
     = f.email_field :email
-    = button_tag "Reset password", :class => "btn btn-primary"
-= link_to "Sign in", new_session_path(resource_name)
+    = button_tag t(:reset_password), :class => "btn btn-primary"
+= link_to t(:sign_in), new_session_path(resource_name)

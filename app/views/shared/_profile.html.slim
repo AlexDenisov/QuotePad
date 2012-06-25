@@ -1,2 +1,4 @@
+#{gravatar_image_tag current_user.email, :alt => current_user.email}
 #{current_user.email}
+= link_to t(:sign_out), sign_out_path, :method => :delete
 

@@ -5,6 +5,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'slim'
 gem 'twitter-bootstrap-rails'
+gem 'gravatar_image_tag'
 
 group :production do 
 

@@ -3,7 +3,7 @@ class ExcerptsController < ApplicationController
   
   def index
     @legend_title = t :excerpts
-    @excerpts = Excerpt.all
+    @excerpts = Excerpt.order("created_at DESC")
   end
   
   def new

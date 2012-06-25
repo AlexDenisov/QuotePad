@@ -3,3 +3,14 @@
 
 en:
   hello: "Hello world"
+  email: "Email"
+  password: "Password"
+  remember_me: "Remember me"
+  sign_in: "Sign in"
+  forgot_password: "Forgot password"
+  reset_password: "Reset password"
+  create_excerpt: "Create excerpt"
+  new_excerpt: "New Excerpt"
+  excerpts: "Excerpts"
+  latest: "Latest"
+  best: "Best"
