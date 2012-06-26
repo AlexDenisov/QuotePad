@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
                   :nickname
   # attr_accessible :title, :body
 
+  has_many :votes
+
   has_many :user_excerpt_liked
   has_many :liked, 
            :through => :user_excerpt_liked, 
@@ -34,7 +36,18 @@ class User < ActiveRecord::Base
   belongs_to :role
   paginates_per 5
 
+
+#  scope :liked, votes.where(:positive => true)
+#  scope :disliked, votes.where(:positive => false)
+
   validates :role_id, :presence => true
+
+#  def liked
+    #self.votes.where(:positive => true)
+  #end
+  #def disliked
+    #self.votes.where(:positive => false)
+  #end
 
   def is_admin?
     return self.role.name.eql? Role.admin.name unless self.role.nil?
@@ -45,4 +58,27 @@ class User < ActiveRecord::Base
     return self.nickname unless self.nickname.nil? or self.nickname.empty?
     self.email
   end
+
+  def vote_up(excerpt)
+    return false if self.liked.include? excerpt 
+    if self.disliked.include? excerpt
+      self.disliked.delete excerpt
+    else
+      self.liked << excerpt
+    end
+    excerpt.increment(:rating, 1).save
+    true
+  end
+
+  def vote_down(excerpt)
+    return false if self.disliked.include? excerpt 
+    if self.liked.include? excerpt
+      self.liked.delete excerpt
+    else
+      self.disliked << excerpt
+    end
+    excerpt.increment(:rating, -1).save
+    true
+  end
+
 end

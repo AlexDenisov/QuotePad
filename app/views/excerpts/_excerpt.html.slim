@@ -3,7 +3,7 @@
     p #{excerpt.content}
     small #{excerpt.author_name}, #{excerpt.created_at.to_s :long}
     = link_to raw("<i class='icon-minus'></i>"), 
-              vote_up_excerpt_path(excerpt), 
+              vote_down_excerpt_path(excerpt), 
               :id => "vote_down", 
               :remote => true, 
               :method => :put

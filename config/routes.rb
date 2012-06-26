@@ -1,5 +1,7 @@
 QuotePad::Application.routes.draw do
 
+  
+
   devise_for :users, 
              :path => ""
   as :user do
@@ -9,10 +11,18 @@ QuotePad::Application.routes.draw do
   end
 
   resources :excerpts do
-    put 'vote_up' => 'excerpts#vote_up', :as => 'vote_up', :on => :member
-    put 'vote_down' => 'excerpts#vote_down', :as => 'vote_down', :on => :member
+    put 'vote_up' => 'excerpts#vote_up', 
+        :as => 'vote_up', 
+        :on => :member, 
+        :defaults => { :format => :js }
+    put 'vote_down' => 'excerpts#vote_down', 
+        :as => 'vote_down', 
+        :on => :member,
+        :defaults => { :format => :js }
   end
   resources :users
+
+#  put 'up/:excerpt_id' => 'votes#up', :as => 'vote_up'
 
   root :to => 'excerpts#index'
 

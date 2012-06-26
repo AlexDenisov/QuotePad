@@ -48,6 +48,7 @@ Feature: Create Excerpt
     And I click on "Save Excerpt"
     Then I should have "div.errors" on the page
 
+  @javascript
   Scenario: Vote Up Excerpts
     Given the following excerpts exist:
       | Content  |

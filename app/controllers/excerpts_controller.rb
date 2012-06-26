@@ -1,5 +1,6 @@
 class ExcerptsController < ApplicationController
   before_filter :authenticate_user!
+  #respond_to :js, :only => [:vote_down, :vote_up]
   load_and_authorize_resource
   skip_authorize_resource :only => [:vote_down, :vote_up]
 #  check_authorization :except => [:vote_down, :vote_up]
@@ -40,34 +41,34 @@ class ExcerptsController < ApplicationController
   end
 
   def vote_up
-    increment = 0
-    if current_user.disliked.include? @excerpt
-      current_user.disliked.remove @excerpt
-      increment = 1
-      puts "DISLIKE+"
-    elsif not current_user.liked.include? @excerpt
-      current_user.liked << @excerpt
-      increment = 1
-      puts "LIKE"
+    #template = self.vote(@excerpt, :vote_up)
+    
+    if current_user.vote_up @excerpt
+      render 'rating'
+    else
+      render :js => ""
     end
-    @excerpt.increment(:rating, increment) if increment
-
-    respond_to do |format|
-      format.js { render 'vote_up' }
-    end
-#    render 'vote_up'
   end
 
   def vote_down
-
+    if current_user.vote_down @excerpt
+      render 'rating'
+    else
+      render :js => ""
+    end
   end
+
+  def vote(excerpt, vote)
+    if current_user.send(vote, excerpt)
+      return 'rating'
+    else
+      return ''
+    end
+  end
+
   private
   def find_resource
     @excerpt = Excerpt.find params[:id]
-  end
-
-  def find_excerpt
-    @excerpt = Excerpt.find params[:excerpt_id]
   end
 
 end
