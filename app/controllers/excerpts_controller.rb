@@ -1,11 +1,7 @@
 class ExcerptsController < ApplicationController
   before_filter :authenticate_user!
-  #respond_to :js, :only => [:vote_down, :vote_up]
   load_and_authorize_resource
   skip_authorize_resource :only => [:vote_down, :vote_up]
-#  check_authorization :except => [:vote_down, :vote_up]
-#  skip_authorization_check :only => [:vote_down, :vote_up]
-  
   before_filter :find_resource, :only => [:vote_up, :vote_down]
 
   def index
@@ -41,21 +37,13 @@ class ExcerptsController < ApplicationController
   end
 
   def vote_up
-    #template = self.vote(@excerpt, :vote_up)
-    
-    if current_user.vote_up @excerpt
-      render 'rating'
-    else
-      render :js => ""
-    end
+    template = self.vote(@excerpt, :vote_up)
+    render template
   end
 
   def vote_down
-    if current_user.vote_down @excerpt
-      render 'rating'
-    else
-      render :js => ""
-    end
+    template = self.vote(@excerpt, :vote_down)
+    render template
   end
 
   def vote(excerpt, vote)
@@ -67,6 +55,7 @@ class ExcerptsController < ApplicationController
   end
 
   private
+
   def find_resource
     @excerpt = Excerpt.find params[:id]
   end
