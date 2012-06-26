@@ -2,6 +2,10 @@ FactoryGirl.define do
   sequence :email do | n |
     "email_#{n}@foo.org"
   end
+  sequence :content do | n |
+    "Excrpt #{n}"
+  end
+
   factory :role do
   end
   
@@ -20,6 +24,9 @@ FactoryGirl.define do
   end
   factory :admin, :parent => :user do
     association :role, :factory => :admin_role
+  end
+  factory :excerpt do
+    content FactoryGirl.generate :content
   end
 end
 

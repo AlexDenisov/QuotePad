@@ -2,7 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  hello: "Hello"
   email: "Email"
   password: "Password"
   remember_me: "Remember me"
@@ -10,6 +10,7 @@ en:
   forgot_password: "Forgot password"
   reset_password: "Reset password"
   create_excerpt: "Create Excerpt"
+  edit_excerpt: "Edit Excerpt"
   new_excerpt: "New Excerpt"
   excerpts: "Excerpts"
   latest: "Latest"
@@ -21,3 +22,4 @@ en:
   save: "Save"
   member_sinth: "Member sinth"
   change_settings: "Change Settings"
+  save_excerpt: "Save Excerpt"

@@ -1,6 +1,8 @@
-#{gravatar_image_tag current_user.email, :alt => current_user.email}
-br/
-= link_to t(:change_settings), edit_user_path(current_user)
-br/
-= link_to t(:sign_out), sign_out_path, :method => :delete
+div
+  #{gravatar_image_tag current_user.email, :alt => current_user.email}
+  br/
+  #{t(:hello)} #{current_user.display_name}
+  = link_to t(:change_settings), edit_user_path(current_user)
+  br/
+  = link_to t(:sign_out), sign_out_path, :method => :delete
 

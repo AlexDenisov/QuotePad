@@ -1,0 +1,5 @@
+= form_for @excerpt do |f|
+  = render :partial => 'shared/errors', :locals => { :record => @excerpt}
+  .controls= f.text_area :content, :size => "10x10", :class => "input-xlarge span6"
+  br/
+  = button_tag t(:save_excerpt), :class => "btn btn-primary"

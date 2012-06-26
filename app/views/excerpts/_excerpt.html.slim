@@ -1,3 +1,20 @@
-blockquote
-  p #{excerpt.content}
-  small #{excerpt.author_name}, #{excerpt.created_at.to_s :long}
+.excerpt
+  blockquote
+    p #{excerpt.content}
+    small #{excerpt.author_name}, #{excerpt.created_at.to_s :long}
+    = link_to raw("<i class='icon-minus'></i>"), 
+              vote_up_excerpt_path(excerpt), 
+              :id => "vote_down", 
+              :remote => true, 
+              :method => :put
+    | &nbsp;
+    span.badge.rating class="#{@rate_class}" data-id="#{excerpt.id}" #{excerpt.rating}
+    | &nbsp;
+    = link_to raw("<i class='icon-plus'></i>"), 
+              vote_up_excerpt_path(excerpt), 
+              :id => "vote_up", 
+              :remote => true, 
+              :method => :put
+
+    - if can? :update, excerpt
+      = link_to " #{t(:edit_excerpt)}", edit_excerpt_path(excerpt)

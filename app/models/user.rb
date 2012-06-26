@@ -17,6 +17,19 @@ class User < ActiveRecord::Base
                   :role_id, 
                   :nickname
   # attr_accessible :title, :body
+
+  has_many :user_excerpt_liked
+  has_many :liked, 
+           :through => :user_excerpt_liked, 
+           :dependent => :destroy, 
+           :source => :excerpt
+  
+  has_many :user_excerpt_disliked
+  has_many :disliked, 
+           :through => :user_excerpt_disliked, 
+           :dependent => :destroy, 
+           :source => :excerpt
+  
   has_many :excerpts
   belongs_to :role
   paginates_per 5
