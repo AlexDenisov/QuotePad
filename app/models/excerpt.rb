@@ -2,8 +2,6 @@ class Excerpt < ActiveRecord::Base
   paginates_per 10
   belongs_to :user
 
-  has_many :votes
-
   has_many :user_excerpt_disliked
   has_many :opposers, 
            :through => :user_excerpt_disliked,

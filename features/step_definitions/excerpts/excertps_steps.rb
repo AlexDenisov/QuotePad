@@ -13,7 +13,7 @@ Then /^I should see (\d+) (.+?) link under "(.+?)"$/ do |count, link_name, css_s
 end
 
 Then /^I should see rating (\-?\d+)$/ do |rating|
-  page.find('span.rating').text.to_i.should be(rating.to_i)
+  page.find('span.rating').text.to_i == rating.to_i
 end
 
 And /^I wait (\d+) seconds?$/ do |sec|

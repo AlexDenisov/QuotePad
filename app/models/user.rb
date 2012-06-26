@@ -9,16 +9,12 @@ class User < ActiveRecord::Base
          :trackable, 
          :validatable
 
-  # Setup accessible (or protected) attributes for your model
   attr_accessible :email, 
                   :password, 
                   :password_confirmation, 
                   :remember_me, 
                   :role_id, 
                   :nickname
-  # attr_accessible :title, :body
-
-  has_many :votes
 
   has_many :user_excerpt_liked
   has_many :liked, 
@@ -36,18 +32,7 @@ class User < ActiveRecord::Base
   belongs_to :role
   paginates_per 5
 
-
-#  scope :liked, votes.where(:positive => true)
-#  scope :disliked, votes.where(:positive => false)
-
   validates :role_id, :presence => true
-
-#  def liked
-    #self.votes.where(:positive => true)
-  #end
-  #def disliked
-    #self.votes.where(:positive => false)
-  #end
 
   def is_admin?
     return self.role.name.eql? Role.admin.name unless self.role.nil?
@@ -60,25 +45,24 @@ class User < ActiveRecord::Base
   end
 
   def vote_up(excerpt)
-    return false if self.liked.include? excerpt 
-    if self.disliked.include? excerpt
-      self.disliked.delete excerpt
-    else
-      self.liked << excerpt
-    end
-    excerpt.increment(:rating, 1).save
-    true
+    vote(self.liked, self.disliked, excerpt, 1)
   end
 
   def vote_down(excerpt)
-    return false if self.disliked.include? excerpt 
-    if self.liked.include? excerpt
-      self.liked.delete excerpt
+    vote(self.disliked, self.liked, excerpt, -1)
+  end
+
+  private
+  def vote(left_votes, right_votes, excerpt, increment)
+    return false if left_votes.include? excerpt
+    if right_votes.include? excerpt
+      right_votes.delete excerpt
     else
-      self.disliked << excerpt
+      left_votes << excerpt
     end
-    excerpt.increment(:rating, -1).save
+    excerpt.increment(:rating, increment)
     true
   end
+
 
 end

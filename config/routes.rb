@@ -1,9 +1,9 @@
 QuotePad::Application.routes.draw do
 
-  
-
   devise_for :users, 
-             :path => ""
+             :path => "", 
+             :skip => [:registrations]
+
   as :user do
     get 'sign_in' => 'devise/sessions#new'
     post 'sign_in' => 'devise/sessions#create'
@@ -20,10 +20,8 @@ QuotePad::Application.routes.draw do
         :on => :member,
         :defaults => { :format => :js }
   end
+
   resources :users
-
-#  put 'up/:excerpt_id' => 'votes#up', :as => 'vote_up'
-
   root :to => 'excerpts#index'
 
 end
