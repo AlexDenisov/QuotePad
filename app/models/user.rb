@@ -60,7 +60,7 @@ class User < ActiveRecord::Base
     else
       left_votes << excerpt
     end
-    excerpt.increment(:rating, increment)
+    excerpt.increment(:rating, increment).save
     true
   end
 

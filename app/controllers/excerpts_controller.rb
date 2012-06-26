@@ -50,7 +50,7 @@ class ExcerptsController < ApplicationController
     if current_user.send(vote, excerpt)
       return 'rating'
     else
-      return ''
+      return 'empty'
     end
   end
 

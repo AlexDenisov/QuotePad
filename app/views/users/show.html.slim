@@ -5,7 +5,7 @@ div
   div 
     = "#{t(:email)}: #{@user.email}"
     br/
-    = "#{t(:member_sinth)}: #{@user.created_at.to_s :long}"
+    = "#{t(:member_since)}: #{@user.created_at.to_s :long}"
 
 br/
 - if can? :manage, User
