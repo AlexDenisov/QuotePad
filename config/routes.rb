@@ -19,6 +19,8 @@ QuotePad::Application.routes.draw do
         :as => 'vote_down', 
         :on => :member,
         :defaults => { :format => :js }
+    get 'best', :on => :collection
+    get 'latest', :on => :collection
   end
 
   resources :users

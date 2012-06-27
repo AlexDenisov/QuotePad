@@ -8,6 +8,18 @@ class ExcerptsController < ApplicationController
     @legend_title = t :excerpts
     @excerpts = Excerpt.order("created_at DESC").page(params[:page])
   end
+
+  def latest
+    @legend_title = t :latest
+    @excerpts = Excerpt.order('created_at DESC').page(params[:page])
+    render 'index'
+  end
+
+  def best
+    @legend_title = t :best
+    @excerpts = Excerpt.order('rating DESC').page(params[:page])
+    render 'index'
+  end
   
   def new
     @legend_title = t :new_excerpt
