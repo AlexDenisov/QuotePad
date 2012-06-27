@@ -11,6 +11,7 @@ gem 'kaminari'
 gem 'coffee-rails', '~> 3.2.1'
 
 group :production do 
+  gem 'sqlite3'
   gem 'unicorn'
 end
 
