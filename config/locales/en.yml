@@ -23,3 +23,5 @@ en:
   member_since: "Member since"
   change_settings: "Change Settings"
   save_excerpt: "Save Excerpt"
+  change_password: "Change Password"
+  password_confirmation: "Confirm Password"

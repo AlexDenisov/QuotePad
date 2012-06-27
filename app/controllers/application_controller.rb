@@ -4,9 +4,10 @@ class ApplicationController < ActionController::Base
   before_filter :project_metadata
   before_filter :find_resource, :only => [:update, 
                                           :edit, 
-                                          :show]
+                                          :show], :unless => :devise_controller?
+
 
   def project_metadata
-    @project_name = "QuotePad"
+    @project_name = APP_CONFIG['service_name']
   end
 end

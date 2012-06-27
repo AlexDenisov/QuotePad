@@ -1,14 +1,13 @@
-h2 Change your password
 = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
-  = devise_error_messages!
-  = f.hidden_field :reset_password_token
   div
-    = f.label :password, "New password"
+    = f.hidden_field :reset_password_token
+    h2 #{@project_name}
     br/
+  div
+    h3 #{t :password}
     = f.password_field :password
   div
-    = f.label :password_confirmation, "Confirm new password"
-    br/
+    h3 #{t :password_confirmation}
     = f.password_field :password_confirmation
-  div= f.submit "Change my password"
-= render "devise/shared/links"
+    = button_tag t(:change_password), :class => "btn btn-primary"
+= link_to t(:sign_in), new_session_path(resource_name)
