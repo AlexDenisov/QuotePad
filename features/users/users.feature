@@ -51,3 +51,14 @@ Feature: User Management
     And I should see "Admin"
     When I visit the Users page
 
+  Scenario: Delete User
+    Given the following users exist:
+      | Email            | Role        |
+      | "test1@mail.org" | Name: Admin |
+    When I visit the Users page
+    Then I should see 2 Users
+    And I click "Delete" under Last "div.user"
+    Then I should see 1 Users
+
+    
+

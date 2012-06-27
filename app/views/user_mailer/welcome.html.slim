@@ -1,0 +1,9 @@
+h2 Welcome to #{@service}
+div 
+  | You have invited to #{link_to @service, @url}.
+  div 
+    | Use this data to sign in
+    p 
+      | Email: #{@user.email}
+    p 
+      | Password: #{@password}

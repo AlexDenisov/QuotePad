@@ -1,6 +1,7 @@
-service_name: BLEADE
+service_name: QuotePad
 smtp_user: 
 smtp_password: 
-
+mailer_from: admin@quote.pad
+url: 
 
 

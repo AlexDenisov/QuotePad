@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new params[:user]
     if @user.save
+      UserMailer.welcome(@user, params[:user][:password]).deliver unless Rails.env == "test"
       redirect_to users_path
     else
       @legend_title = t :new_user
@@ -44,6 +45,11 @@ class UsersController < ApplicationController
       @legend_title = t :edit_user
       render 'edit'
     end
+  end
+
+  def destroy
+    User.delete params[:id]
+    redirect_to users_path
   end
 
   private
