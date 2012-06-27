@@ -8,6 +8,7 @@ gem 'twitter-bootstrap-rails'
 gem 'gravatar_image_tag'
 gem 'cancan'
 gem 'kaminari'
+gem 'coffee-rails', '~> 3.2.1'
 
 group :production do 
 
@@ -38,7 +39,6 @@ end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
 
