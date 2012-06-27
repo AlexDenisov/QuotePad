@@ -11,7 +11,7 @@ gem 'kaminari'
 gem 'coffee-rails', '~> 3.2.1'
 
 group :production do 
-
+  gem 'unicorn'
 end
 
 group :development do
