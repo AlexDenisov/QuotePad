@@ -57,8 +57,6 @@ Feature: Create Excerpt
     Then I should see rating 0
     When I click on "vote_up"
     Then I should see rating 1
-    When I click on "vote_up"
-    Then I should see rating 1
     When I click on "vote_down"
     Then I should see rating 0
     When I click on "vote_down"

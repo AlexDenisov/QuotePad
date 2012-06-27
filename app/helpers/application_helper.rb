@@ -21,7 +21,7 @@ module ApplicationHelper
     if current_user.disliked.include? excerpt
       content = icon_down
     else
-      content = vote_link(vote_down_excerpt_path(excerpt), icon_down)
+      content = vote_link(vote_down_excerpt_path(excerpt), icon_down, 'vote_down')
     end
     raw_span('down', excerpt.id, content)
   end
@@ -30,7 +30,7 @@ module ApplicationHelper
     if current_user.liked.include? excerpt
       content = icon_up
     else
-      content = vote_link(vote_up_excerpt_path(excerpt), icon_up)
+      content = vote_link(vote_up_excerpt_path(excerpt), icon_up, 'vote_up')
     end
     raw_span('up', excerpt.id, content)
   end
@@ -51,8 +51,8 @@ module ApplicationHelper
     "<i class='icon-thumbs-#{type}'></i>"
   end
 
-  def vote_link(url, icon)
-    "<a href=#{url} data-method='put' data-remote='true'>#{icon}</a>"
+  def vote_link(url, icon, type)
+    "<a href=#{url} data-method='put' data-remote='true' id='#{type}'>#{icon}</a>"
   end
 
 end
