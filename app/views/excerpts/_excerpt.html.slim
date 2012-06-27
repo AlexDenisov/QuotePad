@@ -1,13 +1,13 @@
 .excerpt
   blockquote
     p #{excerpt.content}
-    br/
     small #{author_link(excerpt)}, #{excerpt.created_at.to_s :long}
     = vote_down_link(excerpt)
     | &nbsp;
     = rating_badge(excerpt)
     | &nbsp;
     = vote_up_link(excerpt)
+    br/
 
     - if can? :update, excerpt
       br/
