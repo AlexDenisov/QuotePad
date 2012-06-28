@@ -1,4 +1,6 @@
 - @users.each do | user |
   = render :partial => 'user', :locals => { :user => user }
 
+= paginate @users
+
 = button_to t(:create_user), new_user_path, :method => 'get', :class => "btn btn-primary"
