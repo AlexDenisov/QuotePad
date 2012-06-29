@@ -1,7 +1,12 @@
 .excerpt
   blockquote
+    - if @show_id.nil?
+      p #{link_to("##{excerpt.id}", excerpt_path(excerpt)) } |
+        #{author_link(excerpt)}
+    - else
+      p #{author_link(excerpt)}
     p #{excerpt.content}
-    small #{author_link(excerpt)}, #{excerpt.created_at.to_s :long}
+    small #{excerpt.created_at.to_s :long}
     = vote_down_link(excerpt)
     | &nbsp;
     = rating_badge(excerpt)

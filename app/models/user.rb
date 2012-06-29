@@ -9,12 +9,16 @@ class User < ActiveRecord::Base
          :trackable, 
          :validatable
 
+
+  scope :subscribers, where(:subscribed => true)
+
   attr_accessible :email, 
                   :password, 
                   :password_confirmation, 
                   :remember_me, 
                   :role_id, 
-                  :nickname
+                  :nickname, 
+                  :subscribed
 
   has_many :user_excerpt_liked
   has_many :liked, 

@@ -1,0 +1,7 @@
+h2 New Excerpt at #{link_to @service, @url}
+div 
+  | New #{link_to t(:excerpt), excerpt_url(@excerpt)} was added by #{link_to @author.display_name, user_url(@author)} 
+  blockquote
+    #{@excerpt.content}
+
+

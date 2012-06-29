@@ -9,6 +9,7 @@ gem 'gravatar_image_tag'
 gem 'cancan'
 gem 'kaminari'
 gem 'coffee-rails', '~> 3.2.1'
+gem 'resque'
 
 group :production do 
   gem 'sqlite3'

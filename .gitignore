@@ -16,3 +16,4 @@
 *.swp
 *.DS_Store
 public/assets/*
+config/quotepad.yml

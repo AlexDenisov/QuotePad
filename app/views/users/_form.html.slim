@@ -10,6 +10,9 @@
       = f.select(:role_id, @roles.collect { | role | [role.name, role.id] }, :include_blank => @allow_blank_role)
       br/
   div
+    h3 #{t(:subscribe)}
+    = f.check_box :subscribed
+  div
     h3 #{t(:nickname)}
     = f.text_field :nickname
   div
