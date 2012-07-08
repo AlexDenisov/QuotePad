@@ -5,7 +5,7 @@
         #{author_link(excerpt)}
     - else
       p #{author_link(excerpt)}
-    p #{excerpt.content}
+    pre #{excerpt.content}
     small #{excerpt.created_at.to_s :long}
     = vote_down_link(excerpt)
     | &nbsp;
