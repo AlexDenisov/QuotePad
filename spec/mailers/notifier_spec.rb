@@ -16,7 +16,7 @@ describe Notifier do
   end
 
   describe "new_user" do
-    let(:mail) { Notifier.new_user(@recipient.id, @recipient.password) }
+    let(:mail) { Notifier.new_user(@recipient.email, @recipient.password) }
 
     it "should sent new user email" do
       mail.should deliver_to @recipient.email

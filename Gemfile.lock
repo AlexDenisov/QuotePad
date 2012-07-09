@@ -272,6 +272,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   rails (= 3.2.6)
+  resque
   resque_mailer
   resque_spec
   rspec-rails

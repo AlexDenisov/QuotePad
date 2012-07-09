@@ -9,6 +9,7 @@ gem 'gravatar_image_tag'
 gem 'cancan'
 gem 'kaminari'
 gem 'coffee-rails', '~> 3.2.1'
+gem 'resque'
 gem 'resque_mailer'
 
 group :production do 
@@ -25,7 +26,7 @@ end
 group :test do 
   gem 'email_spec'
   gem 'resque_spec'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => nil
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'guard-cucumber'

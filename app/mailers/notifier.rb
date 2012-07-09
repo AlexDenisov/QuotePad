@@ -3,13 +3,13 @@ class Notifier < ActionMailer::Base
 
   default from: "from@example.com"
 
-  def new_user(user_id, password)
-    @user = User.find user_id
+  def new_user(email, password)
+    @email = email
     @password = password
     @url  = APP_CONFIG['url']
     @service = APP_CONFIG['service_name']
     subject = "#{t(:welcome_to)} #{APP_CONFIG['service_name']}"
-    mail(:to => @user.email, :subject => subject)
+    mail(:to => email, :subject => subject)
   end
 
   def new_excerpt(user_id, excerpt_id)

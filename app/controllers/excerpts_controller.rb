@@ -42,7 +42,7 @@ class ExcerptsController < ApplicationController
   def create
     @excerpt = current_user.excerpts.new params[:excerpt]
     if @excerpt.save
-      Resque.enqueue(Notifier, @excerpt.id)
+      #Resque.enqueue(Notifier, @excerpt.id)
       redirect_to excerpts_path, 
                   :notice => t(:excerpt_created_successfully)
     else
