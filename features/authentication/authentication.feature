@@ -9,7 +9,7 @@ Feature: Authentication Scenario
 
   Scenario: Authentication failed with bad data
     When I visit the Sign In page
-    And I fill in User Email with "nonexistent@"em.ail"
+    And I fill in User Email with "nonexisted@"em.ail"
     And I fill in User Password with "Bad Password"
     And I click on "Sign in"
     Then I should be on the Sign In page

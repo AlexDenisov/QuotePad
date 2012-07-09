@@ -1,6 +1,8 @@
 class Excerpt < ActiveRecord::Base
   paginates_per 10
-  belongs_to :user
+  belongs_to :author, 
+             :class_name => "User", 
+             :foreign_key => :user_id
 
   has_many :user_excerpt_disliked
   has_many :opposers, 
@@ -16,12 +18,12 @@ class Excerpt < ActiveRecord::Base
   
   attr_accessible :content, :rating
   validates :content, :presence => true, 
-                     :uniqueness => true,
-                     :length => { :in => 5...200}
+                      :uniqueness => true,
+                      :length => { :in => 5...200}
 
   def author_name
-    return "Anonimous" if self.user.nil?
-    self.user.display_name
+    return "Anonimous" if self.author.nil?
+    self.author.display_name
   end
 
 end

@@ -6,10 +6,10 @@ module ApplicationHelper
 
   def author_link(excerpt)
     author_name = excerpt.author_name
-    if excerpt.user.nil?
+    if excerpt.author.nil?
       author_name
     else
-      link_to author_name, user_path(excerpt.user)
+      link_to author_name, user_path(excerpt.author)
     end
   end
 

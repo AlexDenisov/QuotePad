@@ -22,9 +22,11 @@ FactoryGirl.define do
     password "s3cr3t"
     association :role, :factory => :user_role
   end
+
   factory :admin, :parent => :user do
     association :role, :factory => :admin_role
   end
+
   factory :excerpt do
     content FactoryGirl.generate :content
   end
