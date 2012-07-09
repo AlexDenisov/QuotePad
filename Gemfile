@@ -18,6 +18,10 @@ group :production do
 end
 
 group :development do
+  gem 'bluecloth'
+  gem 'populator'
+  gem 'faker'
+  gem 'github-markup'
   gem 'slim-rails'
   gem 'ruby_parser'
   gem 'hpricot'
